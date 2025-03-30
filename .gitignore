@@ -1,0 +1,25 @@
+# Игнорируем конфиденциальные файлы
+.env
+.env.local
+.env.production
+
+# Игнорируем зависимости Composer
+/vendor/
+
+# Игнорируем логи и кеш
+*.log
+/cache/
+/logs/
+
+# Игнорируем файлы IDE (VS Code, PHPStorm и др.)
+.vscode/
+.idea/
+
+# Игнорируем временные файлы
+*.bak
+*.swp
+*.swo
+
+# Игнорируем файлы операционных систем
+.DS_Store
+Thumbs.db

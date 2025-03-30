@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yo‘nalishlar</title>
+    <link
+      rel="stylesheet"  
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css?v=1" />
+    <link
+      rel="shortcut icon"
+      href="photo_2024-11-28_10-25-47.ico"
+      type="image/x-icon"
+    />
+    <style></style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html #hero" onclick="closeMenu()">Asosiy</a>
+        <a href="index.html #about" onclick="closeMenu()">Haqida</a>
+        <a href="index.html #eshkere" onclick="closeMenu()">Xizmatlar</a>
+        <a href="#footer" onclick="closeMenu()">Aloqa</a>
+        <div class="language-dropdown">
+          <button class="language-toggle" onclick="toggleLanguageMenu()">Til / Язык</button>
+          <div id="language-menu" class="language-menu">
+            <button onclick="changeLanguage('ru')" class="language-option">Русский</button>
+            <button onclick="changeLanguage('uz')" class="language-option">O‘zbekcha</button>
+          </div>
+        </div>   
+      </div>
+    </nav>
+    
+  <!-- Hero Section -->
+  <section class="hero-professions">
+    <h1 class="fade-in">Kelajak kasblari</h1>
+    <p class="fade-in">Zamonaviy dunyoda qiziqarli va talabgir kasblarni kashf eting.</p>
+    <a class="fade-in" href="index.html #apply">Ariza qoldiring</a>
+  </section>
+
+  <!-- Profession Section: Электрик -->
+  <section class="profession" id="electrician">
+    <div class="container">
+      <div class="info-block fade-in">
+        <h2><span>Elektrik</span></h2>
+        <p>Elektriklar elektr tizimlarini o'rnatish, xizmat ko'rsatish va ta'mirlash bilan shug'ullanadi. Bu ko'plab tarmoqlarda eng talabgir kasblardan biridir.</p>
+        <a href="index.html #apply" class="btn">Ariza qoldirish</a>
+      </div>
+      <div class="img-block fade-in">
+        <img src="male-electrician-works-switchboard-overalls-against-backdrop-emergency-lighting.jpg" alt="Elektrik">
+      </div>
+    </div>
+  </section>
+
+  <!-- Profession Section: Kompyuter tarmoqlari operatori -->
+  <section class="profession" id="network-operator">
+    <div class="container reverse">
+      <div class="info-block fade-in">
+        <h2><span>Kompyuter tarmoqlari operatori</span></h2>
+        <p>Kompyuter tarmoqlari operatorlari internet ulanishlari va serverlarning uzluksiz ishlashini ta'minlaydi. Ular jihozlarni sozlashadi va ma'lumotlar xavfsizligini nazorat qilishadi.</p>
+        <a href="index.html #apply" class="btn">Ariza qoldirish</a>
+      </div>
+      <div class="img-block fade-in">
+        <img src="cables-red-light-background.jpg" alt="Tarmoq operatori">
+      </div>
+    </div>
+  </section>
+
+  <!-- Profession Section: Avtomexanik -->
+  <section class="profession" id="mechanic">
+    <div class="container">
+      <div class="info-block fade-in">
+        <h2><span>Avtomexanik</span></h2>
+        <p>Avtomexanik avtomobillarni diagnostika qiladi va ta'mirlaydi. U dvigatellar va boshqa muhim tizimlar haqida hamma narsani biladi.</p>
+        <a href="index.html #apply" class="btn">Ariza qoldirish</a>
+      </div>
+      <div class="img-block fade-in">
+        <img src="mechanic-repairing-car-engine-with-wrench-tool-generated-by-ai.jpg" alt="Avtomexanik">
+      </div>
+    </div>
+  </section>
+
+  <!-- Profession Section: Tikuvchi -->
+  <section class="profession" id="seamstress">
+    <div class="container reverse">
+      <div class="info-block fade-in">
+        <h2><span>Tikuvchi</span></h2>
+        <p>Tikuvchilar individual buyurtmalar asosida kiyimlar yaratadilar, matolar va shakllar bilan ishlaydilar, g'oyalarni hayotga tadbiq etadilar. Bu ijodkorlar uchun kasbdir.</p>
+        <a href="index.html #apply" class="btn">Ariza qoldirish</a>
+      </div>
+      <div class="img-block fade-in">
+        <img src="tailoring-items-arrangement-still-life.jpg" alt="Tikuvchi">
+      </div>
+    </div>
+  </section>
+
+  <!-- Profession Section: Maishiy texnika ta'miri -->
+  <section class="profession" id="repair">
+    <div class="container">
+      <div class="info-block fade-in">
+        <h2><span>Maishiy texnika ta'miri</span></h2>
+        <p>Maishiy texnika ta'mirlovchilari kir yuvish mashinalari, muzlatgichlar, mikrodalga pechlar kabi qurilmalarni tiklaydi, bu esa uydagi qulaylikni ta'minlaydi.</p>
+        <a href="index.html #apply" class="btn">Ariza qoldirish</a>
+      </div>
+      <div class="img-block fade-in">
+        <img src="service-maintenance-worker-repairing (1).jpg" alt="Maishiy texnika ta'miri">
+      </div>
+    </div>
+  </section>
+
+  <!-- Profession Section: Dizayner -->
+  <section class="profession" id="designer">
+    <div class="container reverse">
+      <div class="info-block fade-in">
+        <h2><span>Dizayner</span></h2>
+        <p>Dizaynerlar vizual konseptlar, logotiplar va interfeyslar yaratadilar. Ular san'at va biznesning kesishgan joyida ishlaydilar, g'oyalarni jozibali va funksional loyihalarga aylantiradilar.</p>
+        <a href="index.html #apply" class="btn">Ariza qoldirish</a>
+      </div>
+      <div class="img-block fade-in">
+        <img src="still-life-graphic-design-studio.jpg" alt="Dizayner">
+      </div>
+    </div>
+  </section>
+
+    <section id="footer">
+      <footer class="footer">
+        <div class="footer-container">
+          <!-- Navigatsiya -->
+          <div class="footer-section links">
+            <h3>Navigatsiya</h3>
+            <ul>
+              <li><a href="index.html #hero">Asosiy</a></li>
+              <li><a href="index.html #hero">Haqimizda</a></li>
+              <li><a href="index.html #eshkere">Xizmatlar</a></li>
+              <li><a href="index.html #footer">Aloqa</a></li>
+            </ul>
+          </div>
+
+          <!-- Aloqa -->
+          <div class="footer-section contact">
+            <h3>Aloqa</h3>
+            <p><i class="fas fa-envelope"></i> info@example.com</p>
+            <p><i class="fas fa-phone"></i> +998 71 216 76 16</p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Toshkent, Chilonzor tumani,
+              20-D mavzesi, Katta Qa'ni ko'chasi, 52-uy
+            </p>
+          </div>
+
+          <!-- Ijtimoiy tarmoqlar -->
+          <div class="footer-section social">
+            <h3>Biz ijtimoiy tarmoqlarda</h3>
+            <div class="social-icons">
+              <a href="https://www.youtube.com/@Chilonzor1Sonpolitexnikumi"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="https://t.me/Chilonzor1Politexnikum"
+                ><i class="fab fa-telegram-plane"></i
+              ></a>
+              <a href="https://www.instagram.com/chilonzor1politexnikumi/"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            © 2025 Barcha huquqlar himoyalangan |
+            <a href="#"><ins>Maxfiylik siyosati</ins></a>
+          </p>
+        </div>
+      </footer>
+    </section>
+
+    <script src="scripts.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </body>
+</html>
