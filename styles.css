@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("5588665.jpg");
+  background-image: url("images/5588665.jpg");
   color: rgba(224, 224, 224, 0.9);
   background-repeat: repeat;
 }
@@ -192,7 +192,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: url("photo_2025-03-18_16-47-41.jpg") center/cover no-repeat;
+  background: url("images/photo_2025-03-18_16-47-41.jpg") center/cover no-repeat;
   text-align: center;
   padding: 50px;
   position: relative;
@@ -877,6 +877,10 @@ textarea {
   color: #002e52;
 }
 
+#responseMessage {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .apply-section {
     h2 {
@@ -1035,6 +1039,10 @@ textarea {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   margin-top: 40px;
   font-size: 14px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 5px;
+  justify-content: center;
 }
 
 .footer-bottom p {
@@ -1055,7 +1063,7 @@ textarea {
 
 .hero-professions {
   height: 100vh;
-  background: url('ChatGPT\ Image\ Apr\ 6\,\ 2025\,\ 03_17_27\ AM.png');
+  background: url('images/ChatGPT\ Image\ Apr\ 6\,\ 2025\,\ 03_17_27\ AM.png');
   color: white;
   display: flex;
   flex-direction: column;

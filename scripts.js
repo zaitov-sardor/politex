@@ -106,11 +106,15 @@ document.querySelector(".apply-form").addEventListener("submit", function (event
   })
   .then(response => response.text())
   .then(data => {
+      document.getElementById("responseMessage").style.display = "block";
+
       document.getElementById("responseMessage").innerText = data;
   })
   .catch(error => {
-      document.getElementById("responseMessage").innerText = "Ошибка отправки";
-  });
+      document.getElementById("responseMessage").innerText = "Yuborish xatosi";
+      
+      document.getElementById("responseMessage").style.display = "block";
+    });
 
   window.addEventListener("scroll", function () {
     let scrollTop = window.scrollY;
@@ -131,28 +135,11 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
   if (response.length === 0) {
     // Капча не пройдена
     e.preventDefault(); // Отменяем отправку
-    alert('Пожалуйста, подтвердите, что вы не робот.');
+    alert('Iltimos, robot emasligingizni tasdiqlang.');
   }
 });
 
 
-function toggleLanguageMenu() {
-  const menu = document.getElementById('language-menu');
-  menu.classList.toggle('show');
-}
 
-function changeLanguage(language) {
-  const navText = {
-    'ru': ['Главная', 'О нас', 'Услуги', 'Контакты'],
-    'uz': ['Asosiy', 'Haqida', 'Xizmatlar', 'Aloqa']
-  };
 
-  const links = document.querySelectorAll('.nav-links a');
-  links[0].textContent = navText[language][0];
-  links[1].textContent = navText[language][1];
-  links[2].textContent = navText[language][2];
-  links[3].textContent = navText[language][3];
-
-  document.getElementById('language-menu').classList.remove('show');
-}
 

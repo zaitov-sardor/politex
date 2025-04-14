@@ -2,12 +2,14 @@
 $time_limit = 60;
 
 if (isset($_SESSION['last_submission_time']) && (time() - $_SESSION['last_submission_time']) < $time_limit) {
-    die("Пожалуйста, подождите немного перед повторной отправкой формы.");
+    die("Iltimos, formani qayta yuborishdan oldin biroz kuting. <br>
+    Пожалуйста, подождите немного перед повторной отправкой формы.");
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(403);
-    exit("Прямой доступ запрещён");
+    exit("To‘g‘ridan-to‘g‘ri kirish taqiqlangan.
+    Прямой доступ запрещён");
 }
 
 if (empty($_SESSION['csrf_token'])) {
@@ -29,7 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $recaptchaToken = $_POST['g-recaptcha-response'];
 
     if (empty($recaptchaToken)) {
-        echo "Ошибка капчи. Пожалуйста, подтвердите, что вы не робот.";
+        echo "Captcha xatosi. Iltimos, siz robot emasligingizni tasdiqlang
+        Ошибка капчи. Пожалуйста подтвердите, что вы не робот";
         exit;
     }
 
@@ -39,7 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $responseKeys = json_decode($response, true);
 
     if (!$responseKeys["success"]) {
-        echo "Ошибка капчи. Пожалуйста, попробуйте снова.";
+        echo "Kapcha xatosi. Iltimos, yana bir bor urinib ko‘ring.
+        Ошибка капчи. Пожалуйста, попробуйте снова.";
         exit;
     }
 
@@ -54,7 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail = new PHPMailer(true);
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "Неверный формат email.";
+        echo "Email noto‘g‘ri formatda kiritilgan.
+        Неверный формат email.";
         exit;
     }    
 
@@ -69,23 +74,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $mail->CharSet = 'UTF-8';
 
-        $mail->setFrom($_ENV['SMTP_USER'], 'Форма на сайте');
+        $mail->setFrom($_ENV['SMTP_USER'], 'Saytdagi forma');
         $mail->addAddress($_ENV['SMTP_USER']);
         $mail->addReplyTo($email, $name);
 
         $mail->isHTML(true);
-        $mail->Subject = 'Новое сообщение с сайта';
-        $mail->Body = "<strong>Имя:</strong> $name <br>
+        $mail->Subject = 'Saytdan yangi xabar';
+        $mail->Body = "<strong>Ismi:</strong> $name <br>
                        <strong>Email:</strong> $email <br>
-                       <strong>Номер телефона:</strong> $tel <br>
-                       <strong>Сообщение:</strong> $message";
+                       <strong>Telefon raqami:</strong> $tel <br>
+                       <strong>Xabar:</strong> $message";
 
         $mail->send();
-        echo "Сообщение отправлено!";
+        echo "Xabaringiz yuborildi!
+        Сообщение отправлено!";
     } catch (Exception $e) {
-        echo "Ошибка при отправке: {$mail->ErrorInfo}";
+        echo "Yuborishda xatolik yuz berdi: {$mail->ErrorInfo}
+        Некорректный метод запроса!: {$mail->ErrorInfo}";
     }
 } else {
-    echo "Некорректный метод запроса!";
+    echo "Noto‘g‘ri so‘rov usuli! <br>
+    Некорректный метод запроса!";
 }
 ?>
